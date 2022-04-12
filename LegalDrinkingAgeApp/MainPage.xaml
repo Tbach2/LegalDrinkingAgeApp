@@ -8,6 +8,12 @@
             <Label Text="Welcome to your Legal Drinking Age App" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
 
+        <Label Text="Choose a Country: "/>
+        <RadioButton x:Name="UnitedStates" Content="United States" IsChecked="true" />
+        <RadioButton x:Name="Iceland" Content="Iceland"/>
+        <RadioButton x:Name="Spain" Content="Spain"/>
+        <RadioButton x:Name="Italy" Content="Italy"/>
+       
         <Label Text="Enter Your Birthday: "/>
         <DatePicker x:Name="Birthday"/>
         <Button Text="When can I drink?" Clicked="Handle_Clicked"/>

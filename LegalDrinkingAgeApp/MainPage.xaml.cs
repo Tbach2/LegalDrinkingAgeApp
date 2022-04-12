@@ -18,20 +18,25 @@ namespace LegalDrinkingAgeApp
         int CurrentYear = DateTime.Today.Year;
         int BirthYear;
         int Age;
-        int LegalAgeUS = 21; 
+        int LegalDrinkingAge; 
 
         void Handle_Clicked(Object sender, System.EventArgs e)
         {
+            if(UnitedStates.IsChecked) { LegalDrinkingAge = 21; }
+            else if (Iceland.IsChecked) { LegalDrinkingAge = 20; }
+            else if (Spain.IsChecked) { LegalDrinkingAge = 18; }
+            else if (Italy.IsChecked) { LegalDrinkingAge = 16; }
+
             BirthYear = Birthday.Date.Year;
             Age = CurrentYear - BirthYear;
 
-            if(Age >= LegalAgeUS)
+            if(Age >= LegalDrinkingAge)
             {
                 Text.Text = $"Right now!";
             }
             else
             {
-                Text.Text = $"You will be able to drink legally in {LegalAgeUS - Age} years!";
+                Text.Text = $"You will be able to drink legally in {LegalDrinkingAge - Age} years!";
             }
         }
     }
